@@ -1,0 +1,78 @@
+---
+import { navigation } from '../data/site'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="bg-gray-100 w-full border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo and Copyright -->
+      <div class="md:col-span-1">
+        <a href="/" class="block mb-4">
+          <img
+            src="/images/logos/ff-logo--wordmark--grey.svg"
+            alt="FlowFuse"
+            class="h-8 w-auto opacity-60"
+          />
+        </a>
+        <p class="text-sm text-gray-500">
+          Copyright {currentYear} FlowFuse Inc.
+          <br />
+          All Rights Reserved.
+        </p>
+        <p class="text-sm text-gray-500 mt-2">
+          This site uses cookies. Click{' '}
+          <button
+            type="button"
+            class="underline cursor-pointer hover:text-indigo-600"
+            data-cc="show-preferencesModal"
+          >
+            here
+          </button>{' '}
+          to manage your preferences.
+        </p>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="md:col-span-2">
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+          {
+            navigation.footer.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-gray-600 hover:text-indigo-600 transition-colors"
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div class="md:col-span-1">
+        <h3 class="text-sm font-medium text-gray-700 mb-4">Follow Us</h3>
+        <div class="flex flex-wrap gap-4">
+          {
+            navigation.social.map((item) => (
+              <a
+                href={item.href}
+                class="text-gray-400 hover:text-indigo-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit our ${item.name} page`}
+              >
+                <span class={`i-${item.icon} text-2xl`} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

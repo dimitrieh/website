@@ -1,9 +1,12 @@
+# FlowFuse Website - Astro Build Configuration
+
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     Content-Security-Policy = "frame-ancestors 'none';"
 
+# Domain redirects (preserve existing)
 [[redirects]]
 from = "http://flowforge.com/*"
 to = "http://flowfuse.com/:splat"
@@ -61,12 +64,12 @@ force = true
 [dev]
 port = 8080
 framework = "#static"
-command = "npx @11ty/eleventy --quiet --watch"
+command = "bun run dev"
 autoLaunch = false
 
 [build]
-command = "npm run build"
-publish = "_site"
+command = "bun run build"
+publish = "dist"
 
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
@@ -78,8 +81,6 @@ package = "@algolia/netlify-plugin-crawler"
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
-    "_site/img", # Eleventy Image Disk Cache
+    "node_modules/.astro", # Astro cache
     ".cache" # Remote asset cache
   ]
-
-

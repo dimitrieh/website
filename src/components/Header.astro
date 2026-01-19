@@ -1,0 +1,220 @@
+---
+import { site, navigation } from '../data/site'
+---
+
+<header id="ff-header" class="sticky top-0 z-50 bg-white border-b border-gray-100">
+  <nav class="relative w-full flex items-center justify-between mx-auto px-4 py-3 max-w-7xl">
+    <!-- Logo -->
+    <a href="/" class="flex items-center no-underline hover:no-underline">
+      <img
+        src="/images/logos/ff-logo--wordmark.svg"
+        alt="FlowFuse"
+        class="h-8 w-auto"
+      />
+    </a>
+
+    <!-- Mobile menu button -->
+    <button
+      id="nav-toggle"
+      type="button"
+      class="md:hidden text-gray-700 hover:text-indigo-600 focus:outline-none"
+      aria-label="Toggle navigation"
+    >
+      <svg
+        class="burger h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+      <svg
+        class="close hidden h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <ul
+      id="nav-content"
+      class="hidden md:flex items-center gap-6 text-sm font-medium"
+    >
+      {
+        navigation.main.map((item) =>
+          item.children ? (
+            <li class="relative group">
+              <button
+                type="button"
+                class="flex items-center gap-1 text-gray-700 hover:text-indigo-600 py-2"
+              >
+                {item.name}
+                <svg
+                  class="h-4 w-4 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <ul class="bg-white border border-gray-100 rounded-lg shadow-lg py-2 min-w-[200px]">
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        href={child.href}
+                        class="block px-4 py-2 text-gray-600 hover:text-indigo-600 hover:bg-gray-50"
+                        target={child.external ? '_blank' : undefined}
+                        rel={child.external ? 'noopener noreferrer' : undefined}
+                      >
+                        {child.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ) : (
+            <li>
+              <a
+                href={item.href}
+                class="text-gray-700 hover:text-indigo-600 py-2"
+              >
+                {item.name}
+              </a>
+            </li>
+          )
+        )
+      }
+    </ul>
+
+    <!-- CTAs -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href={site.appURL} class="text-sm font-medium text-gray-700 hover:text-indigo-600">
+        Sign In
+      </a>
+      <a
+        href={site.onboardingURL}
+        class="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+      >
+        Free Trial
+      </a>
+      <a
+        href="/contact-us"
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div
+    id="mobile-nav"
+    class="hidden md:hidden border-t border-gray-100 bg-white"
+  >
+    <ul class="px-4 py-4 space-y-2">
+      {
+        navigation.main.map((item) =>
+          item.children ? (
+            <li class="mobile-dropdown">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-2 text-gray-700 font-medium"
+              >
+                {item.name}
+                <svg
+                  class="h-4 w-4 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <ul class="hidden pl-4 space-y-1 mt-1">
+                {item.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.href}
+                      class="block py-2 text-gray-600 hover:text-indigo-600"
+                      target={child.external ? '_blank' : undefined}
+                      rel={child.external ? 'noopener noreferrer' : undefined}
+                    >
+                      {child.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li>
+              <a href={item.href} class="block py-2 text-gray-700 font-medium hover:text-indigo-600">
+                {item.name}
+              </a>
+            </li>
+          )
+        )
+      }
+    </ul>
+    <div class="px-4 py-4 border-t border-gray-100 space-y-3">
+      <a href={site.appURL} class="block w-full text-center py-2 text-indigo-600 border border-indigo-600 rounded-lg">
+        Sign In
+      </a>
+      <a href={site.onboardingURL} class="block w-full text-center py-2 text-indigo-600 border border-indigo-600 rounded-lg">
+        Free Trial
+      </a>
+      <a href="/contact-us" class="block w-full text-center py-2 text-white bg-indigo-600 rounded-lg">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile navigation toggle
+  const navToggle = document.getElementById('nav-toggle')
+  const mobileNav = document.getElementById('mobile-nav')
+  const burger = navToggle?.querySelector('.burger')
+  const close = navToggle?.querySelector('.close')
+
+  navToggle?.addEventListener('click', () => {
+    mobileNav?.classList.toggle('hidden')
+    burger?.classList.toggle('hidden')
+    close?.classList.toggle('hidden')
+  })
+
+  // Mobile dropdown toggles
+  document.querySelectorAll('.mobile-dropdown button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const ul = button.nextElementSibling
+      const svg = button.querySelector('svg')
+      ul?.classList.toggle('hidden')
+      svg?.classList.toggle('rotate-180')
+    })
+  })
+</script>

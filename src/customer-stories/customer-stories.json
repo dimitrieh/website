@@ -1,8 +1,0 @@
-{
-    "tags": [
-        "stories"
-    ],
-    "layout": "layouts/story.njk",
-    "nav": "customer-stories",
-    "searchTitle": "Customer Stories"
-}

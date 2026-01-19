@@ -1,22 +1,43 @@
-.DS_Store
-_site
-node_modules
-src/handbook/media
-src/docs/*
-!src/docs/docs.json
-src/blueprints/*
-!src/blueprints/*.njk
+# build output
+dist/
 
-# Local development config
-.vscode/
+# generated types
+.astro/
 
+# dependencies
+node_modules/
+bun.lockb
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
 .env
+.env.production
+.env.local
 
-# Cache for assets
-.cache
+# macOS-specific files
+.DS_Store
 
-# Local Netlify folder
-.netlify
+# jetbrains setting folder
+.idea/
 
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
 
-deno.lock
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Old Eleventy source (for reference during migration)
+_eleventy_src/
+
+# Cache
+.cache/

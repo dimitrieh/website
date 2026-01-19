@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const otherChannels = [
+  {
+    title: 'Prefer to speak directly?',
+    description: "Book a call and we'll show you how FlowFuse can support your project, step by step.",
+    buttonText: 'BOOK A DEMO',
+    buttonLink: '/book-demo',
+    image: '/images/pictograms/book-a-demo_blue.png',
+    imageAlt: 'Graphics depicting a video call.',
+  },
+  {
+    title: 'Need technical help instead?',
+    description: 'Visit our Help Center for docs, guides and access to our support team.',
+    buttonText: 'HELP CENTER',
+    buttonLink: '/support',
+    image: '/images/pictograms/support_blue.png',
+    imageAlt: 'Graphics depicting a helping hand.',
+  },
+]
+---
+
+<BaseLayout title="Contact Us" description="Get in touch with FlowFuse">
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Contact Us</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Have questions? Looking to use FlowFuse in your project? Fill out the form and we'll
+          connect you with someone from our team.
+        </p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-16">
+        <form class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2"
+                >First Name *</label
+              >
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2"
+                >Last Name *</label
+              >
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label
+            >
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2"
+              >How can we help? *</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 px-4 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- Other Channels -->
+      <div class="grid md:grid-cols-2 gap-8">
+        {
+          otherChannels.map((channel) => (
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+              <img src={channel.image} alt={channel.imageAlt} class="w-16 h-16 mx-auto mb-4" />
+              <h3 class="text-lg font-medium text-gray-800 mb-2">{channel.title}</h3>
+              <p class="text-gray-600 text-sm mb-4">{channel.description}</p>
+              <a
+                href={channel.buttonLink}
+                class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+              >
+                {channel.buttonText}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro'
+
+const features = [
+  {
+    title: '<span class="text-indigo-600">Device</span> Agent',
+    description: 'Deploy FlowFuse Device Agent to edge devices for seamless connectivity and management.',
+  },
+  {
+    title: 'Remote <span class="text-indigo-600">Management</span>',
+    description: 'Manage and update edge devices remotely through the FlowFuse platform.',
+  },
+  {
+    title: '<span class="text-indigo-600">Offline</span> Capable',
+    description: 'Edge devices continue operating even when disconnected from the cloud.',
+  },
+  {
+    title: '<span class="text-indigo-600">Secure</span> Tunneling',
+    description: 'Secure, encrypted connections between edge devices and the cloud platform.',
+  },
+]
+
+const faqs = [
+  {
+    question: 'What hardware can run the FlowFuse Device Agent?',
+    answer: 'The Device Agent runs on any hardware that supports Node.js, including Raspberry Pi, industrial PCs, and edge gateways.',
+  },
+  {
+    question: 'How does edge-to-cloud communication work?',
+    answer: 'Devices connect to FlowFuse Cloud through secure MQTT connections, enabling real-time data transmission and remote management.',
+  },
+]
+---
+
+<SolutionLayout
+  title="FlowFuse for Edge Connectivity"
+  subtitle="Connect and manage edge devices at scale."
+  description="<p>Deploy Node-RED to edge devices and manage them centrally with FlowFuse's device management capabilities.</p>"
+  heroImg="/images/pictograms/edge_blue.png"
+  features={features}
+  faqs={faqs}
+/>

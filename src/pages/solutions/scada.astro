@@ -1,0 +1,42 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro'
+
+const features = [
+  {
+    title: '<span class="text-indigo-600">Modern</span> SCADA Interface',
+    description: 'Build custom SCADA interfaces with FlowFuse Dashboard. Create responsive, real-time displays that work on any device.',
+  },
+  {
+    title: 'Real-time <span class="text-indigo-600">Monitoring</span>',
+    description: 'Monitor your industrial processes in real-time with customizable dashboards and alerts.',
+  },
+  {
+    title: '<span class="text-indigo-600">Flexible</span> Control Logic',
+    description: 'Implement custom control logic using Node-RED\'s visual programming environment.',
+  },
+  {
+    title: '<span class="text-indigo-600">Secure</span> & Scalable',
+    description: 'Enterprise-grade security with role-based access control and audit logging.',
+  },
+]
+
+const faqs = [
+  {
+    question: 'Can FlowFuse replace our existing SCADA system?',
+    answer: 'FlowFuse can complement or gradually replace existing SCADA systems. Many customers start by adding FlowFuse alongside their current system, then migrate functionality over time.',
+  },
+  {
+    question: 'What protocols does FlowFuse support for SCADA applications?',
+    answer: 'FlowFuse supports Modbus, OPC-UA, MQTT, BACnet, and many other industrial protocols through Node-RED\'s extensive library of nodes.',
+  },
+]
+---
+
+<SolutionLayout
+  title="FlowFuse for SCADA"
+  subtitle="Modernize your SCADA systems with a modular and flexible platform."
+  description="<p>Build custom interfaces and control logic in a fraction of the time, gaining full visibility of your operations in an agile and secure way.</p>"
+  heroImg="/images/pictograms/scada_blue.png"
+  features={features}
+  faqs={faqs}
+/>

@@ -1,0 +1,42 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro'
+
+const features = [
+  {
+    title: '<span class="text-indigo-600">Universal</span> Connectivity',
+    description: 'Connect to databases, APIs, industrial protocols, and cloud services with ease.',
+  },
+  {
+    title: 'Data <span class="text-indigo-600">Transformation</span>',
+    description: 'Transform and normalize data from different sources into consistent formats.',
+  },
+  {
+    title: 'Real-time <span class="text-indigo-600">Streaming</span>',
+    description: 'Stream data in real-time between systems using MQTT, HTTP, and other protocols.',
+  },
+  {
+    title: '<span class="text-indigo-600">AI-Assisted</span> Development',
+    description: 'Use FlowFuse Copilot to quickly build data integration flows with natural language.',
+  },
+]
+
+const faqs = [
+  {
+    question: 'What data sources can FlowFuse connect to?',
+    answer: 'FlowFuse can connect to virtually any data source including SQL/NoSQL databases, REST APIs, industrial protocols (OPC-UA, Modbus, MQTT), and cloud services (AWS, Azure, Google Cloud).',
+  },
+  {
+    question: 'Can FlowFuse handle high-volume data streams?',
+    answer: 'Yes, FlowFuse is designed to handle high-throughput data streams. The platform can be scaled horizontally to meet demanding data integration requirements.',
+  },
+]
+---
+
+<SolutionLayout
+  title="FlowFuse for Data Integration"
+  subtitle="Connect, transform, and move data across your enterprise."
+  description="<p>Build powerful data integration pipelines that connect all your systems and enable real-time data flow.</p>"
+  heroImg="/images/pictograms/db_blue.png"
+  features={features}
+  faqs={faqs}
+/>

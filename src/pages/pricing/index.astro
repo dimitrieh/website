@@ -1,0 +1,302 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { site } from '../../data/site'
+
+const cloudPlans = [
+  {
+    name: 'Starter',
+    description: 'Cloud-hosted Node-RED with FlowFuse development enhancements. The fastest way to get started building with Node-RED.',
+    price: '$20',
+    period: '/month',
+    note: 'after free trial of Pro',
+    features: [
+      'Faster, more powerful, AI-enhanced Node-RED',
+      '2 Team members',
+      'Blueprints',
+      'Option to upgrade up to 3 hosted/3 remote instances',
+    ],
+    cta: 'TRY FOR FREE',
+    ctaLink: site.onboardingURL,
+    highlight: false,
+    includesNote: 'Includes 1 hosted instance. Additional instances are $20/month.',
+  },
+  {
+    name: 'Pro',
+    description: 'Build bespoke applications collaboratively, manage your Node-RED applications with improved security and control.',
+    price: '$425',
+    period: '/month',
+    features: [
+      'Faster, more powerful, AI-enhanced Node-RED',
+      '20 Team members',
+      'Team collaboration',
+      'MQTT Broker (8 clients to start)',
+      'Standard Support + SLA: 99.5%',
+    ],
+    cta: 'TRY FOR FREE',
+    ctaLink: site.onboardingURL,
+    highlight: true,
+    includesNote: 'Includes 5 hosted instances or remote instances. Additional instances start at $35/month.',
+  },
+  {
+    name: 'Enterprise',
+    description: 'Operate organization-wide industrial applications with the highest security and integrity.',
+    price: "Let's Talk",
+    features: [
+      'Faster, more powerful, AI-enhanced Node-RED',
+      'Unlimited team members',
+      'Single Sign-On',
+      'MQTT Broker (20 clients to start)',
+      'Enterprise support + SLA: 99.9%',
+      'Device group management',
+    ],
+    cta: 'CONTACT US',
+    ctaLink: '/contact-us',
+    highlight: false,
+    includesNote: 'Includes 20 hosted instances or remote instances.',
+  },
+]
+
+const selfHostedPlans = [
+  {
+    name: 'Pro',
+    description: 'Build bespoke applications collaboratively, manage your Node-RED applications with improved security and control.',
+    price: '$425',
+    period: '/month',
+    note: 'Billed annually',
+    features: [
+      'Faster, more powerful, AI-enhanced Node-RED',
+      '20 Team members',
+      'Team collaboration',
+      'Enterprise support',
+      'Dedicated Success Management',
+    ],
+    cta: 'CONTACT US',
+    ctaLink: '/contact-us',
+    highlight: false,
+    includesNote: 'Includes 5 hosted instances or remote instances. Additional instances start at $35/month.',
+  },
+  {
+    name: 'Enterprise',
+    description: 'Operate organization-wide industrial applications with the highest security and integrity.',
+    price: 'Free Trial',
+    features: [
+      'Faster, more powerful, AI-enhanced Node-RED',
+      'Unlimited team members',
+      'Single Sign-On',
+      'Enterprise support',
+      'Dedicated Success Management',
+      'Device group management',
+    ],
+    cta: 'GET 30-DAY TRIAL',
+    ctaLink: '/contact-us',
+    highlight: true,
+    includesNote: 'Includes 20 hosted instances or remote instances.',
+  },
+]
+
+const faqs = [
+  {
+    question: 'Does FlowFuse offer annual discounts for FlowFuse Cloud?',
+    answer: 'Yes, both Starter and Pro customers receive a free month when paying for a year of FlowFuse in advance. Simply choose yearly billing upon signup, or select it from the Billing area in the app.',
+  },
+  {
+    question: 'Are flat-fee or site-wide licenses available?',
+    answer: 'It is not possible at this time to purchase an unlimited-use license, but contact us to discuss pricing for your unique use case.',
+  },
+  {
+    question: 'Do you offer discounts for large-scale deployments?',
+    answer: 'Yes, we provide customized volume discounts for use cases requiring hundreds or thousands of Node-RED instances. Please contact us to discuss your specific requirements.',
+  },
+]
+---
+
+<BaseLayout
+  title="Pricing"
+  description="Discover the pricing options for FlowFuse, featuring Starter, Pro, and Enterprise plans. Benefit from volume discounts on Pro and Enterprise plans."
+>
+  <div class="w-full bg-gradient-to-b from-indigo-50 to-white">
+    <!-- Header -->
+    <div class="text-center pt-12 pb-6 px-6">
+      <h1 class="text-3xl md:text-4xl font-medium">
+        FlowFuse <span class="text-indigo-600">Pricing</span>
+      </h1>
+    </div>
+
+    <!-- Toggle -->
+    <div class="flex justify-center mb-8">
+      <div class="bg-gray-200 rounded-full p-1 flex">
+        <button
+          id="cloud-toggle"
+          class="px-6 py-2 rounded-full text-sm font-medium transition-colors bg-white text-indigo-600 shadow"
+        >
+          CLOUD
+        </button>
+        <button
+          id="selfhosted-toggle"
+          class="px-6 py-2 rounded-full text-sm font-medium transition-colors text-gray-600 hover:text-gray-800"
+        >
+          SELF HOSTED
+        </button>
+      </div>
+    </div>
+
+    <!-- Cloud Plans -->
+    <div id="cloud-plans" class="max-w-6xl mx-auto px-6 pb-16">
+      <div class="grid md:grid-cols-3 gap-6">
+        {cloudPlans.map((plan) => (
+          <div class={`bg-white rounded-lg p-6 shadow-sm border-2 ${plan.highlight ? 'border-indigo-500' : 'border-transparent'} flex flex-col`}>
+            <div class="flex-grow">
+              <h3 class="text-xl font-medium text-gray-800 mb-2">{plan.name}</h3>
+              <p class="text-gray-600 text-sm mb-6">{plan.description}</p>
+
+              <ul class="space-y-2 mb-6">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-sm text-gray-600">
+                    <span class="i-heroicons-check text-green-500 flex-shrink-0 mt-0.5" />
+                    <span set:html={feature} />
+                  </li>
+                ))}
+              </ul>
+
+              <p class="text-sm text-gray-500 mb-6">{plan.includesNote}</p>
+            </div>
+
+            <div class="mt-auto">
+              <div class="mb-4">
+                {plan.price !== "Let's Talk" ? (
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-3xl font-medium text-gray-800">{plan.price}</span>
+                    {plan.period && <span class="text-gray-500">{plan.period}</span>}
+                  </div>
+                ) : (
+                  <span class="text-2xl font-medium text-gray-800">{plan.price}</span>
+                )}
+                {plan.note && <p class="text-xs text-gray-500 mt-1">{plan.note}</p>}
+              </div>
+
+              <a
+                href={plan.ctaLink}
+                class="block w-full text-center py-3 px-4 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+              >
+                {plan.cta}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Self-Hosted Plans -->
+    <div id="selfhosted-plans" class="max-w-4xl mx-auto px-6 pb-16 hidden">
+      <div class="grid md:grid-cols-2 gap-6">
+        {selfHostedPlans.map((plan) => (
+          <div class={`bg-white rounded-lg p-6 shadow-sm border-2 ${plan.highlight ? 'border-indigo-500' : 'border-transparent'} flex flex-col`}>
+            <div class="flex-grow">
+              <h3 class="text-xl font-medium text-gray-800 mb-2">{plan.name}</h3>
+              <p class="text-gray-600 text-sm mb-6">{plan.description}</p>
+
+              <ul class="space-y-2 mb-6">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-sm text-gray-600">
+                    <span class="i-heroicons-check text-green-500 flex-shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p class="text-sm text-gray-500 mb-6">{plan.includesNote}</p>
+            </div>
+
+            <div class="mt-auto">
+              <div class="mb-4">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-2xl font-medium text-gray-800">{plan.price}</span>
+                  {plan.period && <span class="text-gray-500">{plan.period}</span>}
+                </div>
+                {plan.note && <p class="text-xs text-gray-500 mt-1">{plan.note}</p>}
+              </div>
+
+              <a
+                href={plan.ctaLink}
+                class="block w-full text-center py-3 px-4 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+              >
+                {plan.cta}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Security Statement -->
+  <div class="max-w-4xl mx-auto px-6 py-12 text-center border-b">
+    <p class="text-gray-600">
+      At FlowFuse we understand that the security practices of our product are important to your company.
+      We've prepared a <a href="/platform/security/" class="text-indigo-600 hover:underline">security statement</a> for you to understand the choices we've made.
+    </p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-2xl md:text-3xl font-medium text-center mb-10">
+      Frequently Asked <span class="text-indigo-600">Questions</span>
+    </h2>
+    <p class="text-center text-gray-600 mb-10">
+      If you have any questions not addressed here, don't hesitate to contact us through our <a href="/contact-us" class="text-indigo-600 hover:underline">Contact Us</a> page.
+    </p>
+
+    <div class="space-y-6">
+      {faqs.map((faq) => (
+        <details class="group bg-white rounded-lg border border-gray-200 p-4">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-gray-800">
+            {faq.question}
+            <span class="i-heroicons-chevron-down text-gray-400 group-open:rotate-180 transition-transform" />
+          </summary>
+          <p class="mt-4 text-gray-600">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <!-- Contact CTA -->
+  <div class="w-full bg-gray-50 py-16 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl font-medium mb-4">Need help choosing the right plan?</h2>
+      <p class="text-gray-600 mb-8">
+        Contact us to discuss your specific needs and get advice on the best fit for your project.
+      </p>
+      <a
+        href="/contact-us"
+        class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const cloudToggle = document.getElementById('cloud-toggle')
+  const selfhostedToggle = document.getElementById('selfhosted-toggle')
+  const cloudPlans = document.getElementById('cloud-plans')
+  const selfhostedPlans = document.getElementById('selfhosted-plans')
+
+  cloudToggle?.addEventListener('click', () => {
+    cloudToggle.classList.add('bg-white', 'text-indigo-600', 'shadow')
+    cloudToggle.classList.remove('text-gray-600')
+    selfhostedToggle?.classList.remove('bg-white', 'text-indigo-600', 'shadow')
+    selfhostedToggle?.classList.add('text-gray-600')
+    cloudPlans?.classList.remove('hidden')
+    selfhostedPlans?.classList.add('hidden')
+  })
+
+  selfhostedToggle?.addEventListener('click', () => {
+    selfhostedToggle.classList.add('bg-white', 'text-indigo-600', 'shadow')
+    selfhostedToggle.classList.remove('text-gray-600')
+    cloudToggle?.classList.remove('bg-white', 'text-indigo-600', 'shadow')
+    cloudToggle?.classList.add('text-gray-600')
+    selfhostedPlans?.classList.remove('hidden')
+    cloudPlans?.classList.add('hidden')
+  })
+</script>

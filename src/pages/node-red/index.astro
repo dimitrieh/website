@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { site } from '../../data/site'
+
+const features = [
+  {
+    title: 'Visual Programming',
+    description: 'Build applications by connecting nodes in a browser-based flow editor.',
+    icon: 'i-heroicons-squares-plus',
+  },
+  {
+    title: 'Extensive Node Library',
+    description: 'Access thousands of community-contributed nodes for any integration.',
+    icon: 'i-heroicons-puzzle-piece',
+  },
+  {
+    title: 'Run Anywhere',
+    description: 'Deploy on cloud, edge devices, or on-premises infrastructure.',
+    icon: 'i-heroicons-cloud',
+  },
+  {
+    title: 'Open Source',
+    description: 'Built on the foundation of open source with an active community.',
+    icon: 'i-heroicons-code-bracket',
+  },
+]
+---
+
+<BaseLayout
+  title="Node-RED"
+  description="Node-RED is a flow-based programming tool for wiring together hardware devices, APIs, and online services."
+>
+  <!-- Hero -->
+  <div class="w-full bg-gradient-to-b from-red-50 to-white py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <img src="/images/node-red-hexagon.png" alt="Node-RED Logo" class="w-20 h-20 mx-auto mb-6" />
+      <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">
+        Node-RED: The Foundation of FlowFuse
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Node-RED is a powerful flow-based programming tool that makes it easy to wire together
+        hardware devices, APIs, and online services. FlowFuse enhances Node-RED with enterprise
+        features for teams.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={site.onboardingURL}
+          class="inline-flex items-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors"
+        >
+          Try FlowFuse Free
+        </a>
+        <a
+          href="https://nodered.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 border border-red-600 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors"
+        >
+          Learn More About Node-RED
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="w-full py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-medium text-center mb-12">
+        Why <span class="text-red-600">Node-RED</span>?
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {
+          features.map((feature) => (
+            <div class="flex gap-4">
+              <span class={`${feature.icon} text-3xl text-red-600 flex-shrink-0`} />
+              <div>
+                <h3 class="text-lg font-medium text-gray-800 mb-2">{feature.title}</h3>
+                <p class="text-gray-600">{feature.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- FlowFuse Enhancement -->
+  <div class="w-full bg-gray-50 py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-medium mb-6">
+        FlowFuse: Node-RED for <span class="text-indigo-600">Enterprise</span>
+      </h2>
+      <p class="text-gray-600 mb-8">
+        FlowFuse extends Node-RED with the features teams need to build, deploy, and manage
+        production applications at scale.
+      </p>
+      <div class="grid sm:grid-cols-3 gap-6 text-left">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="font-medium text-gray-800 mb-2">Team Collaboration</h3>
+          <p class="text-gray-600 text-sm">Work together with version control and shared projects.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="font-medium text-gray-800 mb-2">Device Management</h3>
+          <p class="text-gray-600 text-sm">Deploy and manage Node-RED on edge devices at scale.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="font-medium text-gray-800 mb-2">Enterprise Security</h3>
+          <p class="text-gray-600 text-sm">SSO, RBAC, and audit logging for compliance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="w-full py-16 px-6 bg-red-600">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-medium text-white mb-4">
+        Ready to supercharge your Node-RED?
+      </h2>
+      <p class="text-red-100 mb-8">
+        Start building with FlowFuse today and take your Node-RED projects to the next level.
+      </p>
+      <a
+        href={site.onboardingURL}
+        class="inline-flex items-center px-6 py-3 bg-white text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors"
+      >
+        Start Free Trial
+      </a>
+    </div>
+  </div>
+</BaseLayout>

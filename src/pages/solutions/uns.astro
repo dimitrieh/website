@@ -1,0 +1,42 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro'
+
+const features = [
+  {
+    title: '<span class="text-indigo-600">Unified</span> Data Model',
+    description: 'Create a single source of truth for all your industrial data with a standardized namespace structure.',
+  },
+  {
+    title: 'MQTT <span class="text-indigo-600">Native</span>',
+    description: 'Built-in MQTT broker support for real-time data distribution across your enterprise.',
+  },
+  {
+    title: '<span class="text-indigo-600">Sparkplug B</span> Support',
+    description: 'Full support for Sparkplug B specification for interoperable industrial IoT.',
+  },
+  {
+    title: 'Data <span class="text-indigo-600">Contextualization</span>',
+    description: 'Add context to your data with standardized naming conventions and metadata.',
+  },
+]
+
+const faqs = [
+  {
+    question: 'What is a Unified Namespace?',
+    answer: 'A Unified Namespace (UNS) is an architecture pattern that creates a single source of truth for all operational and business data, making it accessible to any system that needs it.',
+  },
+  {
+    question: 'Does FlowFuse support Sparkplug B?',
+    answer: 'Yes, FlowFuse fully supports the Sparkplug B specification through Node-RED nodes, enabling interoperable industrial IoT applications.',
+  },
+]
+---
+
+<SolutionLayout
+  title="FlowFuse for Unified Namespace"
+  subtitle="Create a single source of truth for all your industrial data."
+  description="<p>Implement a modern data architecture that enables real-time data sharing across your entire organization.</p>"
+  heroImg="/images/pictograms/uns_blue.png"
+  features={features}
+  faqs={faqs}
+/>

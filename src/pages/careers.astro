@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { site } from '../data/site'
+---
+
+<BaseLayout title="Careers" description="Join the FlowFuse team - view current job openings">
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Careers at FlowFuse</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Join our remote-first team and help us make industrial automation accessible to everyone.
+        </p>
+      </div>
+
+      <!-- Why Join -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-medium text-center mb-8">Why Join FlowFuse?</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="text-center p-6">
+            <span class="i-heroicons-globe-alt text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="font-medium text-gray-800 mb-2">Remote First</h3>
+            <p class="text-gray-600 text-sm">Work from anywhere in the world.</p>
+          </div>
+          <div class="text-center p-6">
+            <span class="i-heroicons-code-bracket text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="font-medium text-gray-800 mb-2">Open Source</h3>
+            <p class="text-gray-600 text-sm">Contribute to Node-RED and our open-source projects.</p>
+          </div>
+          <div class="text-center p-6">
+            <span class="i-heroicons-rocket-launch text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="font-medium text-gray-800 mb-2">Growth</h3>
+            <p class="text-gray-600 text-sm">Join a fast-growing company making real impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Board Link -->
+      <div class="text-center bg-gray-50 rounded-lg p-12">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">View Open Positions</h2>
+        <p class="text-gray-600 mb-6">
+          Check out our current job openings on our careers page.
+        </p>
+        <a
+          href={site.jobBoard}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          View Jobs on Greenhouse
+          <span class="i-heroicons-arrow-top-right-on-square ml-2" />
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

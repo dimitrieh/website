@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const team = [
+  {
+    name: "ZJ van de Weg",
+    title: "CEO",
+    bio: "ZJ is the CEO of FlowFuse. As an engineer-turned-CEO with a career built on open-source software, his mission is to empower engineers to build better, more efficient software solutions.",
+    github: "ZJvandeWeg",
+    linkedin: "zegerjan",
+    headshot: "zj.png"
+  },
+  {
+    name: "Nick O'Leary",
+    title: "CTO",
+    bio: "Nick is the founder/CTO of FlowFuse. He created Node-RED in 2013 and continues to lead the project today. He has worked on projects ranging from smart meter energy monitoring to retrofitting sensors to industrial manufacturing lines.",
+    github: "knolleary",
+    linkedin: "nickoleary",
+    headshot: "nick.png"
+  },
+  {
+    name: "Ben Hardill",
+    title: "Senior Software Developer",
+    bio: "Ben is the Lead Backend Developer and one of the founding employees at FlowFuse. As well as being a Node-RED core contributor he enjoys tinkering at lowest levels of the Internet.",
+    github: "hardillb",
+    linkedin: "ben-hardill",
+    headshot: "ben.png"
+  },
+  {
+    name: "Steve McLaughlin",
+    title: "Senior Software Developer",
+    bio: "Steve is a Senior Software Engineer at FlowFuse with extensive production environment experience. Steve is also a Node-RED core contributor and has written several popular contribution nodes.",
+    github: "steve-mcl",
+    headshot: "steve.png"
+  },
+  {
+    name: "Jamie Strusz",
+    title: "Engineering Manager",
+    bio: "Jamie leads engineering at FlowFuse, focusing on developer experience, clarity, and building systems and teams that scale.",
+    github: "allthedoll",
+    linkedin: "geocuration",
+    headshot: "jamie.png"
+  },
+  {
+    name: "Lori Beaulieu",
+    title: "Director of Product",
+    bio: "Lori leads product management at FlowFuse, focused on product strategy and creating an award-winning product for our customers.",
+    github: "lbeau",
+    linkedin: "beaulieulori",
+    headshot: "lori.png"
+  },
+  {
+    name: "Rob Marcer",
+    title: "Head of Professional Services",
+    bio: "Rob helps FlowFuse customers plan, build, and deploy large scale Internet of Things projects across various industries.",
+    github: "robmarcer",
+    linkedin: "rob-marcer-b414b910",
+    headshot: "rob.png"
+  },
+  {
+    name: "Yndira Escobar",
+    title: "Marketing Manager",
+    github: "Yndira-E",
+    linkedin: "yndira-escobar-es",
+    headshot: "yndira.png"
+  },
+  {
+    name: "Piotr Pawlowski",
+    title: "DevOps Engineer",
+    github: "ppawlowski",
+    headshot: "piotr.png"
+  },
+  {
+    name: "Serban Costin",
+    title: "Senior Front End Developer",
+    github: "cstns",
+    linkedin: "serban-costin-32a07894",
+    headshot: "serban.png"
+  },
+]
+---
+
+<BaseLayout
+  title="Team"
+  description="Meet the FlowFuse team - the people behind the platform"
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Meet the Team</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We're a remote-first team of engineers, designers, and business professionals passionate
+          about making industrial automation accessible to everyone.
+        </p>
+      </div>
+
+      <!-- Team Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          team.map((member) => (
+            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 text-center">
+              <img
+                src={`/images/team/headshot-${member.headshot.replace('.png', '')}.png`}
+                alt={member.name}
+                class="w-24 h-24 rounded-full mx-auto mb-4 object-cover bg-gray-100"
+                onerror="this.src='/images/team/headshot-placeholder.png'"
+              />
+              <h3 class="text-lg font-medium text-gray-800">{member.name}</h3>
+              <p class="text-indigo-600 text-sm mb-3">{member.title}</p>
+              {member.bio && <p class="text-gray-600 text-sm mb-4">{member.bio}</p>}
+              <div class="flex justify-center gap-3">
+                {member.github && (
+                  <a
+                    href={`https://github.com/${member.github}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-gray-600"
+                    aria-label={`${member.name}'s GitHub`}
+                  >
+                    <span class="i-mdi-github text-xl" />
+                  </a>
+                )}
+                {member.linkedin && (
+                  <a
+                    href={`https://linkedin.com/in/${member.linkedin}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-blue-600"
+                    aria-label={`${member.name}'s LinkedIn`}
+                  >
+                    <span class="i-mdi-linkedin text-xl" />
+                  </a>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Join CTA -->
+      <div class="mt-16 text-center bg-gray-50 rounded-lg p-8">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">Want to join us?</h2>
+        <p class="text-gray-600 mb-6">
+          We're always looking for talented people to join our team.
+        </p>
+        <a
+          href="/careers/"
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          View Open Positions
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

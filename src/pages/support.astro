@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const supportOptions = [
+  {
+    title: 'Documentation',
+    description: 'Browse our comprehensive docs and guides.',
+    link: '/docs/',
+    icon: 'i-heroicons-book-open',
+    external: false,
+  },
+  {
+    title: 'Community Forum',
+    description: 'Get help from the Node-RED community.',
+    link: 'https://discourse.nodered.org/c/vendors/flowfuse/24/',
+    icon: 'i-heroicons-chat-bubble-left-right',
+    external: true,
+  },
+  {
+    title: 'GitHub Issues',
+    description: 'Report bugs or request features.',
+    link: 'https://github.com/FlowFuse/flowfuse/issues',
+    icon: 'i-mdi-github',
+    external: true,
+  },
+  {
+    title: 'Contact Us',
+    description: 'Reach out to our support team directly.',
+    link: '/contact-us',
+    icon: 'i-heroicons-envelope',
+    external: false,
+  },
+]
+---
+
+<BaseLayout title="Support" description="Get help with FlowFuse - documentation, community, and contact support">
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Support</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Need help? We're here for you. Choose from our support options below.
+        </p>
+      </div>
+
+      <!-- Support Options -->
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        {
+          supportOptions.map((option) => (
+            <a
+              href={option.link}
+              target={option.external ? '_blank' : undefined}
+              rel={option.external ? 'noopener noreferrer' : undefined}
+              class="flex items-start gap-4 p-6 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-sm transition-all group"
+            >
+              <span class={`${option.icon} text-3xl text-indigo-600 flex-shrink-0`} />
+              <div>
+                <h3 class="font-medium text-gray-800 group-hover:text-indigo-600 flex items-center gap-2">
+                  {option.title}
+                  {option.external && <span class="i-heroicons-arrow-top-right-on-square text-sm" />}
+                </h3>
+                <p class="text-gray-600 text-sm mt-1">{option.description}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Enterprise Support -->
+      <div class="bg-indigo-50 rounded-lg p-8 text-center">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">Enterprise Support</h2>
+        <p class="text-gray-600 mb-6">
+          Enterprise customers receive dedicated support with guaranteed response times and a
+          dedicated success manager.
+        </p>
+        <a
+          href="/pricing/"
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          View Enterprise Plans
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

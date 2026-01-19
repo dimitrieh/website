@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const values = [
+  {
+    title: 'Iterative Improvement',
+    description: 'We believe in continuous improvement through small, incremental changes.',
+    icon: 'i-heroicons-arrow-path',
+  },
+  {
+    title: 'Constructive Candor',
+    description: 'We value honest, direct feedback that helps us grow and improve.',
+    icon: 'i-heroicons-chat-bubble-left-right',
+  },
+  {
+    title: 'Customer Empathy',
+    description: 'We put ourselves in our customers\' shoes to understand their needs.',
+    icon: 'i-heroicons-heart',
+  },
+  {
+    title: 'Collaboration',
+    description: 'We work together across teams and time zones to achieve our goals.',
+    icon: 'i-heroicons-users',
+  },
+]
+
+const investors = [
+  { name: 'Open Core Ventures', logo: '/images/about/investors/opencore.png' },
+  { name: 'Cota Capital', logo: '/images/about/investors/cota-capital.png' },
+  { name: 'Westwave Capital', logo: '/images/about/investors/westwave.png' },
+  { name: 'Uncorrelated', logo: '/images/about/investors/uncorrelated.png' },
+]
+---
+
+<BaseLayout
+  title="About"
+  description="FlowFuse provides a complete platform for building, scaling and securing your production Node-RED applications. Accelerate digitalization of your industrial processes with ease."
+>
+  <!-- Primary Content -->
+  <div class="w-full pt-12 pb-16 md:pb-10 md:pt-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-10">About FlowFuse</h1>
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2 text-left">
+          <p class="text-gray-600 mb-4">
+            <span class="font-medium">FlowFuse</span> was founded in 2021 by{' '}
+            <span class="font-medium">Nick O'Leary, co-creator of Node-RED</span>, a renowned
+            open-source development tool. Nick saw the potential to make Node-RED a powerful
+            solution for industrial enterprises and FlowFuse was created to elevate Node-RED
+            through a secure and scalable platform.
+          </p>
+          <p class="text-gray-600">
+            <span class="font-medium"
+              >FlowFuse seamlessly integrates into existing industrial environments,</span
+            > offering an adaptable foundation for building bespoke applications. Our customers rely
+            on FlowFuse to develop innovative applications that modernize their industrial
+            operations creating the opportunity to improve their processes continuously.
+          </p>
+        </div>
+        <div class="md:w-1/2">
+          <img
+            src="/images/about/about.png"
+            alt="FlowFuse hosting Node-RED connected to many devices"
+            class="w-full max-w-md mx-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Node-RED & Open Source -->
+  <div class="w-full py-12 px-6">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+        <div class="md:w-1/4 flex items-center gap-3">
+          <img src="/images/node-red-hexagon.png" alt="Node-RED Logo" class="w-10 h-10" />
+          <h4 class="text-lg font-medium text-red-700">Node-RED</h4>
+        </div>
+        <p class="md:w-3/4 text-gray-600">
+          <span class="font-medium"
+            >We are deeply committed to the success of the Node-RED open source project</span
+          >. FlowFuse dedicates significant resources to improving the core technology of the
+          project and fostering the growth of the Node-RED community.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+        <div class="md:w-1/4 flex items-center gap-3">
+          <img
+            src="/images/pictograms/opensource_red.png"
+            alt="Open Source Logo"
+            class="w-10 h-10"
+          />
+          <h4 class="text-lg font-medium text-red-700">Open Source</h4>
+        </div>
+        <p class="md:w-3/4 text-gray-600">
+          We believe strongly that{' '}
+          <span class="font-medium">Open Source is the heart of everything we do</span> influencing
+          not just our contributions to Node-RED but also the development of FlowFuse. We strive to
+          be good Open Source citizens and to empower the community to get involved.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Company Values -->
+  <div class="w-full bg-gray-50 py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-medium text-center mb-6">Corporate Values</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+        As a remote-only company, FlowFuse seeks and fosters talent from Europe, North America, and
+        Asia. Our{' '}
+        <a href="/handbook/company/values/" class="text-indigo-600 hover:underline"
+          >corporate values</a
+        > encourage our team to continuously iterate using constructive candor to prioritize customer
+        empathy.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          values.map((value) => (
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-3">
+                <span class={`${value.icon} text-2xl text-indigo-600`} />
+                <h3 class="text-lg font-medium text-gray-800">{value.title}</h3>
+              </div>
+              <p class="text-gray-600 text-sm">{value.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Investors -->
+  <div class="w-full py-14 px-6">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-10 text-center">
+      <h2 class="text-2xl md:text-3xl font-medium mb-8">Our Investors</h2>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        {
+          investors.map((investor) => (
+            <img
+              src={investor.logo}
+              alt={`${investor.name} Logo`}
+              class="h-10 md:h-12 object-contain opacity-80 hover:opacity-100 transition-opacity"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Working at FlowFuse -->
+  <div class="w-full py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-medium text-center mb-10">Working at FlowFuse</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <a
+          href="/team/"
+          class="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+        >
+          <img
+            src="/images/pictograms/collaboration_blue.png"
+            alt="Team"
+            class="w-16 h-16 object-contain"
+          />
+          <div>
+            <h4 class="font-medium text-gray-800 group-hover:text-indigo-600 flex items-center gap-2">
+              Team
+              <span class="i-heroicons-arrow-top-right-on-square text-sm" />
+            </h4>
+            <p class="text-gray-600 text-sm">Meet our growing team!</p>
+          </div>
+        </a>
+
+        <a
+          href="/careers/"
+          class="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+        >
+          <img
+            src="/images/pictograms/briefcase_blue.png"
+            alt="Careers"
+            class="w-16 h-16 object-contain"
+          />
+          <div>
+            <h4 class="font-medium text-gray-800 group-hover:text-indigo-600 flex items-center gap-2">
+              Careers
+              <span class="i-heroicons-arrow-top-right-on-square text-sm" />
+            </h4>
+            <p class="text-gray-600 text-sm">Join our team. Check out current career opportunities.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro'
+
+const features = [
+  {
+    title: '<span class="text-indigo-600">Custom</span> MES Workflows',
+    description: 'Build manufacturing execution workflows tailored to your specific production processes.',
+  },
+  {
+    title: 'Production <span class="text-indigo-600">Tracking</span>',
+    description: 'Track work orders, production status, and quality metrics in real-time.',
+  },
+  {
+    title: '<span class="text-indigo-600">Integration</span> Ready',
+    description: 'Connect seamlessly with ERP, PLM, and other enterprise systems.',
+  },
+  {
+    title: '<span class="text-indigo-600">Rapid</span> Deployment',
+    description: 'Deploy custom MES functionality faster than traditional solutions.',
+  },
+]
+
+const faqs = [
+  {
+    question: 'Can FlowFuse integrate with our existing MES?',
+    answer: 'Yes, FlowFuse can integrate with existing MES systems to add functionality or serve as a bridge between systems.',
+  },
+  {
+    question: 'How does FlowFuse handle production scheduling?',
+    answer: 'FlowFuse can implement custom scheduling logic and integrate with planning systems to automate work order management.',
+  },
+]
+---
+
+<SolutionLayout
+  title="FlowFuse for MES"
+  subtitle="Implement custom Manufacturing Execution Systems with greater speed."
+  description="<p>Rapidly develop and deploy the specific workflows you need, connecting the production plan to the plant floor with ultimate efficiency.</p>"
+  heroImg="/images/pictograms/mes_blue.png"
+  features={features}
+  faqs={faqs}
+/>

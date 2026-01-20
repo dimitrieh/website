@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { site } from '../data/site'
+
+const integrations = [
+  { name: 'MQTT', category: 'Protocols', icon: 'i-heroicons-signal' },
+  { name: 'OPC UA', category: 'Protocols', icon: 'i-heroicons-server' },
+  { name: 'Modbus', category: 'Protocols', icon: 'i-heroicons-cpu-chip' },
+  { name: 'HTTP/REST', category: 'Protocols', icon: 'i-heroicons-globe-alt' },
+  { name: 'WebSocket', category: 'Protocols', icon: 'i-heroicons-arrows-right-left' },
+  { name: 'TCP/UDP', category: 'Protocols', icon: 'i-heroicons-server-stack' },
+  { name: 'PostgreSQL', category: 'Databases', icon: 'i-heroicons-circle-stack' },
+  { name: 'MySQL', category: 'Databases', icon: 'i-heroicons-circle-stack' },
+  { name: 'MongoDB', category: 'Databases', icon: 'i-heroicons-circle-stack' },
+  { name: 'InfluxDB', category: 'Databases', icon: 'i-heroicons-chart-bar' },
+  { name: 'AWS', category: 'Cloud', icon: 'i-heroicons-cloud' },
+  { name: 'Azure', category: 'Cloud', icon: 'i-heroicons-cloud' },
+  { name: 'Google Cloud', category: 'Cloud', icon: 'i-heroicons-cloud' },
+  { name: 'Kafka', category: 'Messaging', icon: 'i-heroicons-queue-list' },
+  { name: 'RabbitMQ', category: 'Messaging', icon: 'i-heroicons-inbox-stack' },
+  { name: 'Siemens S7', category: 'PLCs', icon: 'i-heroicons-cog' },
+]
+
+const categories = [...new Set(integrations.map(i => i.category))]
+---
+
+<BaseLayout
+  title="Integrations"
+  description="FlowFuse and Node-RED integrate with hundreds of protocols, databases, and services for industrial automation."
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Integrations</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Connect to virtually any system, protocol, or service. Node-RED's extensive
+          library of nodes makes integration easy.
+        </p>
+      </div>
+
+      <!-- Categories -->
+      {categories.map((category) => (
+        <div class="mb-12">
+          <h2 class="text-xl font-medium text-gray-800 mb-6">{category}</h2>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {integrations
+              .filter(i => i.category === category)
+              .map((integration) => (
+                <div class="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 transition-colors">
+                  <span class={`${integration.icon} text-xl text-indigo-600`} />
+                  <span class="font-medium text-gray-700">{integration.name}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- More -->
+      <div class="text-center bg-indigo-50 rounded-lg p-8">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">And Thousands More</h2>
+        <p class="text-gray-600 mb-6">
+          With over 4,000 community-contributed nodes available in the Node-RED library,
+          you can connect to almost anything.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://flows.nodered.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+          >
+            Browse Node-RED Library
+            <span class="i-heroicons-arrow-top-right-on-square ml-2" />
+          </a>
+          <a
+            href={site.onboardingURL}
+            class="inline-flex items-center px-6 py-3 border border-indigo-600 text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors"
+          >
+            Try FlowFuse Free
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

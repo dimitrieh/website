@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Professional Services"
+  description="Expert help for your FlowFuse and Node-RED projects - from implementation to training."
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Professional Services</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Our expert team can help you plan, build, and deploy your industrial automation
+          solutions with FlowFuse and Node-RED.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-clipboard-document-check text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Implementation</h3>
+          <p class="text-gray-600">
+            We help you design and implement Node-RED solutions tailored to your specific
+            requirements and infrastructure.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-academic-cap text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Training</h3>
+          <p class="text-gray-600">
+            On-site or remote training for your team on Node-RED development and
+            FlowFuse platform administration.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-wrench-screwdriver text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Custom Development</h3>
+          <p class="text-gray-600">
+            Need custom nodes or integrations? Our team can build exactly what you need
+            for your use case.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-chart-bar text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Architecture Review</h3>
+          <p class="text-gray-600">
+            Expert review of your existing Node-RED architecture with recommendations
+            for improvement and scaling.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center bg-indigo-50 rounded-lg p-8">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">Get Expert Help</h2>
+        <p class="text-gray-600 mb-6">
+          Contact us to discuss your project requirements and how we can help.
+        </p>
+        <a
+          href="/contact-us/"
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

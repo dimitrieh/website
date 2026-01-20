@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Security Statement"
+  description="Learn about FlowFuse's commitment to security, compliance, and protecting your industrial data."
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="i-heroicons-shield-check text-5xl text-indigo-600 mb-6 block mx-auto" />
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Security Statement</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Security is at the core of everything we do at FlowFuse. We're committed to protecting
+          your industrial data with enterprise-grade security measures.
+        </p>
+      </div>
+
+      <!-- Security Features -->
+      <div class="space-y-8 mb-16">
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-medium text-gray-800 mb-3">Data Encryption</h3>
+          <p class="text-gray-600">
+            All data is encrypted in transit using TLS 1.2+ and at rest using AES-256.
+            Your industrial data is protected at every stage.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-medium text-gray-800 mb-3">Single Sign-On (SSO)</h3>
+          <p class="text-gray-600">
+            Integrate with your existing identity provider using SAML 2.0. Centralize user
+            management and enforce your organization's authentication policies.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-medium text-gray-800 mb-3">Role-Based Access Control (RBAC)</h3>
+          <p class="text-gray-600">
+            Define granular permissions for team members. Control who can view, edit, and
+            deploy Node-RED applications across your organization.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-medium text-gray-800 mb-3">Audit Logging</h3>
+          <p class="text-gray-600">
+            Complete audit trail of all actions taken within FlowFuse. Track changes,
+            deployments, and user activity for compliance and troubleshooting.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-medium text-gray-800 mb-3">Infrastructure Security</h3>
+          <p class="text-gray-600">
+            FlowFuse Cloud runs on secure, SOC 2 compliant infrastructure with regular
+            security assessments and vulnerability scanning.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="text-center bg-gray-50 rounded-lg p-8">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">Questions About Security?</h2>
+        <p class="text-gray-600 mb-6">
+          Our team is happy to discuss your security requirements and provide additional details.
+        </p>
+        <a
+          href="/contact-us/"
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { site } from '../../data/site'
+---
+
+<BaseLayout
+  title="Device Agent"
+  description="Deploy and manage Node-RED on edge devices at scale with the FlowFuse Device Agent."
+>
+  <!-- Hero -->
+  <div class="w-full bg-gradient-to-b from-indigo-50 to-white py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">
+        FlowFuse <span class="text-indigo-600">Device Agent</span>
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Deploy Node-RED to edge devices and manage them from a single platform.
+        Scale from one device to thousands with centralized control.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={site.onboardingURL}
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          Try FlowFuse Free
+        </a>
+        <a
+          href="/docs/"
+          class="inline-flex items-center px-6 py-3 border border-indigo-600 text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors"
+        >
+          Documentation
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="w-full py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-medium text-center mb-12">
+        Edge Device <span class="text-indigo-600">Management</span>
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-cloud-arrow-down text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Remote Deployment</h3>
+          <p class="text-gray-600">
+            Push Node-RED flows to devices remotely. Deploy the same configuration to hundreds of devices with a single click.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-signal text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Device Monitoring</h3>
+          <p class="text-gray-600">
+            Monitor device status, health, and connectivity from the FlowFuse dashboard. Get alerts when devices go offline.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-arrow-path text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Auto-Updates</h3>
+          <p class="text-gray-600">
+            Automatically push updates to devices when flows change. Roll back to previous versions if needed.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <span class="i-heroicons-shield-check text-3xl text-indigo-600 mb-4 block" />
+          <h3 class="text-lg font-medium text-gray-800 mb-2">Secure Communication</h3>
+          <p class="text-gray-600">
+            All communication between devices and FlowFuse is encrypted. No inbound ports required on devices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supported Devices -->
+  <div class="w-full py-16 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-medium mb-8">Supported Platforms</h2>
+      <p class="text-gray-600 mb-8">
+        The Device Agent runs on any platform that supports Node.js, including:
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700">Raspberry Pi</span>
+        <span class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700">Industrial PCs</span>
+        <span class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700">Linux Servers</span>
+        <span class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700">Windows</span>
+        <span class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700">Docker</span>
+        <span class="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700">Balena</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="w-full py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-medium text-gray-800 mb-4">
+        Deploy Node-RED to Your Devices
+      </h2>
+      <p class="text-gray-600 mb-8">
+        Get started with the Device Agent and take control of your edge deployments.
+      </p>
+      <a
+        href={site.onboardingURL}
+        class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+      >
+        Get Started Free
+      </a>
+    </div>
+  </div>
+</BaseLayout>

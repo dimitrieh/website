@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { site } from '../data/site'
+
+const sections = [
+  {
+    title: 'Getting Started',
+    description: 'Learn the basics of FlowFuse and get up and running quickly.',
+    icon: 'i-heroicons-rocket-launch',
+    links: [
+      { name: 'Introduction', href: '#' },
+      { name: 'Quick Start Guide', href: '#' },
+      { name: 'Creating Your First Instance', href: '#' },
+    ],
+  },
+  {
+    title: 'User Guide',
+    description: 'Detailed guides for using FlowFuse features.',
+    icon: 'i-heroicons-book-open',
+    links: [
+      { name: 'Managing Instances', href: '#' },
+      { name: 'Team Collaboration', href: '#' },
+      { name: 'DevOps Pipelines', href: '#' },
+    ],
+  },
+  {
+    title: 'Device Agent',
+    description: 'Deploy Node-RED to edge devices with the Device Agent.',
+    icon: 'i-heroicons-cpu-chip',
+    links: [
+      { name: 'Installation', href: '#' },
+      { name: 'Configuration', href: '#' },
+      { name: 'Troubleshooting', href: '#' },
+    ],
+  },
+  {
+    title: 'Administration',
+    description: 'Self-hosted deployment and administration.',
+    icon: 'i-heroicons-cog',
+    links: [
+      { name: 'Docker Installation', href: '#' },
+      { name: 'Kubernetes Installation', href: '#' },
+      { name: 'Configuration Options', href: '#' },
+    ],
+  },
+]
+---
+
+<BaseLayout
+  title="Documentation"
+  description="FlowFuse documentation - guides, tutorials, and API reference."
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Documentation</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Everything you need to know about FlowFuse - from getting started to advanced topics.
+        </p>
+      </div>
+
+      <!-- Quick Start -->
+      <div class="bg-indigo-50 rounded-lg p-8 mb-12 text-center">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">New to FlowFuse?</h2>
+        <p class="text-gray-600 mb-6">
+          Get started with our quick start guide and have your first Node-RED instance
+          running in minutes.
+        </p>
+        <a
+          href={site.onboardingURL}
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          Start Free Trial
+        </a>
+      </div>
+
+      <!-- Documentation Sections -->
+      <div class="grid md:grid-cols-2 gap-6">
+        {sections.map((section) => (
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <div class="flex items-center gap-3 mb-4">
+              <span class={`${section.icon} text-2xl text-indigo-600`} />
+              <h3 class="text-lg font-medium text-gray-800">{section.title}</h3>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">{section.description}</p>
+            <ul class="space-y-2">
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-indigo-600 hover:text-indigo-700 text-sm"
+                  >
+                    {link.name} →
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- External Docs Link -->
+      <div class="mt-12 text-center">
+        <p class="text-gray-600">
+          Looking for the full documentation?{' '}
+          <a
+            href="https://flowfuse.com/docs/"
+            class="text-indigo-600 hover:text-indigo-700 font-medium"
+          >
+            Visit our documentation site →
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

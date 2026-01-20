@@ -1,0 +1,87 @@
+---
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description || post.data.subtitle}
+  image={post.data.image}
+>
+  <article class="w-full py-12 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <header class="mb-8">
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {post.data.tags.map((tag: string) => (
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-sm rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">
+          {post.data.title}
+        </h1>
+        {post.data.subtitle && (
+          <p class="text-xl text-gray-600 mb-4">{post.data.subtitle}</p>
+        )}
+        <div class="flex items-center gap-4 text-gray-500">
+          <time datetime={post.data.date.toISOString()}>
+            {formatDate(post.data.date)}
+          </time>
+          {post.data.authors && post.data.authors.length > 0 && (
+            <>
+              <span>•</span>
+              <span>{post.data.authors.join(', ')}</span>
+            </>
+          )}
+        </div>
+      </header>
+
+      {post.data.image && (
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="w-full rounded-lg mb-8"
+        />
+      )}
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none prose-headings:font-medium prose-a:text-indigo-600 prose-img:rounded-lg">
+        <Content />
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-12 pt-8 border-t border-gray-200">
+        <a
+          href="/blog/"
+          class="inline-flex items-center text-indigo-600 hover:text-indigo-700"
+        >
+          <span class="i-heroicons-arrow-left mr-2" />
+          Back to Blog
+        </a>
+      </footer>
+    </div>
+  </article>
+</BaseLayout>

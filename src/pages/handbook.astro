@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Handbook"
+  description="The FlowFuse handbook - our guide to how we work as a remote-first company."
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Handbook</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Welcome to the FlowFuse handbook. This is our guide to how we work as a remote-first
+          company, our values, and our processes.
+        </p>
+      </div>
+
+      <!-- Sections -->
+      <div class="space-y-8">
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h2 class="text-xl font-medium text-gray-800 mb-3">About FlowFuse</h2>
+          <p class="text-gray-600">
+            FlowFuse is the Industrial Application Platform built on Node-RED. We help
+            organizations connect, collect, build, and scale their industrial automation solutions.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h2 class="text-xl font-medium text-gray-800 mb-3">Our Values</h2>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="i-heroicons-check text-indigo-600 mt-1" />
+              <span><strong>Open Source First</strong> - We contribute to and support open source</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="i-heroicons-check text-indigo-600 mt-1" />
+              <span><strong>Customer Focus</strong> - We build what customers need</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="i-heroicons-check text-indigo-600 mt-1" />
+              <span><strong>Transparency</strong> - We communicate openly</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="i-heroicons-check text-indigo-600 mt-1" />
+              <span><strong>Remote First</strong> - We trust our team to work from anywhere</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white border border-gray-200 rounded-lg">
+          <h2 class="text-xl font-medium text-gray-800 mb-3">Working at FlowFuse</h2>
+          <p class="text-gray-600 mb-4">
+            We're a remote-first company with team members around the world. We value
+            async communication, documentation, and results over time spent.
+          </p>
+          <a
+            href="/careers/"
+            class="text-indigo-600 hover:text-indigo-700 font-medium"
+          >
+            View open positions →
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="text-center mt-16">
+        <p class="text-gray-600">
+          Questions about how we work?{' '}
+          <a href="/contact-us/" class="text-indigo-600 hover:text-indigo-700">
+            Contact us
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

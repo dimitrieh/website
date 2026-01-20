@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { site } from '../data/site'
+---
+
+<BaseLayout
+  title="Get Started"
+  description="Start using FlowFuse today - choose your preferred deployment option."
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Get Started with FlowFuse</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Choose the option that works best for you. Get started in minutes with
+          FlowFuse Cloud or deploy on your own infrastructure.
+        </p>
+      </div>
+
+      <!-- Options -->
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <!-- Cloud Option -->
+        <div class="p-8 bg-indigo-50 rounded-lg border-2 border-indigo-200">
+          <div class="text-center mb-6">
+            <span class="i-heroicons-cloud text-4xl text-indigo-600 mb-4 block" />
+            <h2 class="text-2xl font-medium text-gray-800">FlowFuse Cloud</h2>
+            <span class="inline-block mt-2 px-3 py-1 bg-indigo-600 text-white text-sm rounded-full">
+              Recommended
+            </span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-indigo-600" />
+              No infrastructure to manage
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-indigo-600" />
+              Start free, scale as you grow
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-indigo-600" />
+              Automatic updates and backups
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-indigo-600" />
+              Ready in minutes
+            </li>
+          </ul>
+          <a
+            href="https://app.flowfuse.com"
+            class="block w-full text-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+          >
+            Start Free on Cloud
+          </a>
+        </div>
+
+        <!-- Self-Hosted Option -->
+        <div class="p-8 bg-white rounded-lg border border-gray-200">
+          <div class="text-center mb-6">
+            <span class="i-heroicons-server-stack text-4xl text-gray-600 mb-4 block" />
+            <h2 class="text-2xl font-medium text-gray-800">Self-Hosted</h2>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-gray-600" />
+              Full control over your data
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-gray-600" />
+              Deploy on your infrastructure
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-gray-600" />
+              Docker or Kubernetes
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <span class="i-heroicons-check text-gray-600" />
+              Community or Enterprise support
+            </li>
+          </ul>
+          <a
+            href="/docs/"
+            class="block w-full text-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors"
+          >
+            View Installation Docs
+          </a>
+        </div>
+      </div>
+
+      <!-- Questions -->
+      <div class="text-center bg-gray-50 rounded-lg p-8">
+        <h2 class="text-xl font-medium text-gray-800 mb-4">Not sure which option is right for you?</h2>
+        <p class="text-gray-600 mb-6">
+          Our team is happy to help you choose the best option for your needs.
+        </p>
+        <a
+          href="/contact-us/"
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          Talk to Us
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

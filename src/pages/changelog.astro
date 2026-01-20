@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Changelog"
+  description="See what's new in FlowFuse - new features, improvements, and bug fixes."
+>
+  <div class="w-full py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">Changelog</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Stay up to date with the latest features, improvements, and fixes in FlowFuse.
+        </p>
+      </div>
+
+      <!-- Latest Updates CTA -->
+      <div class="bg-indigo-50 rounded-lg p-8 text-center mb-12">
+        <h2 class="text-2xl font-medium text-gray-800 mb-4">Latest Release</h2>
+        <p class="text-gray-600 mb-6">
+          Check out the latest release notes and see what's new in FlowFuse.
+        </p>
+        <a
+          href="https://github.com/FlowFuse/flowfuse/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          View on GitHub
+          <span class="i-heroicons-arrow-top-right-on-square ml-2" />
+        </a>
+      </div>
+
+      <!-- RSS Feed -->
+      <div class="text-center">
+        <p class="text-gray-600">
+          Subscribe to our{' '}
+          <a href="/blog/" class="text-indigo-600 hover:text-indigo-700">blog</a>
+          {' '}for release announcements and updates.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

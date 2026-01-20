@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { site } from '../../data/site'
+---
+
+<BaseLayout
+  title="Why FlowFuse"
+  description="Discover why organizations choose FlowFuse for their Node-RED deployments and industrial automation needs."
+>
+  <!-- Hero -->
+  <div class="w-full bg-gradient-to-b from-indigo-50 to-white py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-medium text-gray-800 mb-4">
+        Why <span class="text-indigo-600">FlowFuse</span>?
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        FlowFuse brings enterprise capabilities to Node-RED, making it ready for
+        production deployments and team collaboration at scale.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reasons -->
+  <div class="w-full py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="space-y-12">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="md:w-1/3">
+            <span class="i-heroicons-rocket-launch text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="text-xl font-medium text-gray-800">Created by Node-RED Experts</h3>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-600">
+              FlowFuse was founded by the creator of Node-RED, Nick O'Leary. Our team includes
+              Node-RED core contributors who understand the platform inside and out. We're
+              committed to the success of the open-source project and the community.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="md:w-1/3">
+            <span class="i-heroicons-building-office text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="text-xl font-medium text-gray-800">Enterprise Ready</h3>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-600">
+              While Node-RED is great for prototyping, enterprise deployments need more.
+              FlowFuse adds security, team collaboration, DevOps pipelines, and centralized
+              management that organizations require for production use.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="md:w-1/3">
+            <span class="i-heroicons-cpu-chip text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="text-xl font-medium text-gray-800">Edge to Cloud</h3>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-600">
+              Deploy Node-RED anywhere - from edge devices to the cloud. FlowFuse's Device
+              Agent makes it easy to manage thousands of remote devices from a single dashboard.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="md:w-1/3">
+            <span class="i-heroicons-users text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="text-xl font-medium text-gray-800">Team Collaboration</h3>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-600">
+              Work together on Node-RED projects with version control, role-based access,
+              and audit logging. No more emailing flow files or wondering who changed what.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="md:w-1/3">
+            <span class="i-heroicons-lifebuoy text-4xl text-indigo-600 mb-4 block" />
+            <h3 class="text-xl font-medium text-gray-800">Professional Support</h3>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-600">
+              Get support from the experts. Our team can help you design, implement, and
+              optimize your Node-RED solutions for your specific use case.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="w-full py-16 px-6 bg-indigo-600">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-medium text-white mb-4">
+        Ready to get started?
+      </h2>
+      <p class="text-indigo-100 mb-8">
+        Try FlowFuse free and see why organizations trust us for their Node-RED deployments.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={site.onboardingURL}
+          class="inline-flex items-center px-6 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors"
+        >
+          Start Free Trial
+        </a>
+        <a
+          href="/contact-us/"
+          class="inline-flex items-center px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          Talk to Sales
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
